@@ -49,6 +49,5 @@ public class ClienteService {
         if(direccion != null && direccion.length() > 0 && !Objects.equals(clienteActualizar.getDireccion(), direccion)){
             clienteActualizar.setDireccion(direccion);
         }
-
     }
 }

@@ -2,17 +2,19 @@ package com.accenture.prueba.data;
 
 import com.accenture.prueba.cliente.Cliente;
 import com.accenture.prueba.cliente.ClienteRepository;
+import com.accenture.prueba.pedido.Pedido;
 import com.accenture.prueba.producto.ProductoRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class DataPrueba {
 
-    /*
+
 	@Bean
 	public CommandLineRunner crearListaDeProductos(ProductoRepository repository){
 		return args -> {
@@ -32,19 +34,19 @@ public class DataPrueba {
 			);
 		};
 	}
-    */
+
 
 
     @Bean
     public CommandLineRunner crearClientes (ClienteRepository clienteRepository){
         return args -> {
-            Cliente cristian = new Cliente(12345L, "cristian","carrera 11# 14-08");
-            Cliente veronica = new Cliente(23456L, "veronica", "carrera 11# 14-08");
-            Cliente camilo = new Cliente(34566L, "camilo", "transversal 5# 5-45");
-            Cliente daniel = new Cliente(37865L, "daniel", "calle 78# 56-45");
-            Cliente camila = new Cliente(34675L, "camila", "carrera 5# 50-82");
-            Cliente valeria = new Cliente(56577L, "valeria", "circular 7# 67-40");
-            Cliente susana = new Cliente(98765L, "susana", "calle 5# 78-12");
+            Cliente cristian = new Cliente(12345L, "cristian", "carrera 11# 14-08", new ArrayList<Pedido>());
+            Cliente veronica = new Cliente(23456L, "veronica", "carrera 11# 14-08", new ArrayList<Pedido>());
+            Cliente camilo = new Cliente(34566L, "camilo", "transversal 5# 5-45", new ArrayList<Pedido>());
+            Cliente daniel = new Cliente(37865L, "daniel", "calle 78# 56-45", new ArrayList<Pedido>());
+            Cliente camila = new Cliente(34675L, "camila", "carrera 5# 50-82", new ArrayList<Pedido>());
+            Cliente valeria = new Cliente(56577L, "valeria", "circular 7# 67-40", new ArrayList<Pedido>());
+            Cliente susana = new Cliente(98765L, "susana", "calle 5# 78-12", new ArrayList<Pedido>());
 
             clienteRepository.saveAll(
                     List.of(cristian,veronica,camilo,daniel,camila,valeria,susana)

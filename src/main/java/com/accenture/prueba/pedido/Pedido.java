@@ -36,6 +36,11 @@ public class Pedido {
         this.idCliente = idCliente;
     }
 
+    public Pedido(List<Producto> listaProductos, Integer totalFactura){
+        this.listaProductos = listaProductos;
+        this.totalFactura = totalFactura;
+    }
+
     public Long getIdPedido() {
         return idPedido;
     }

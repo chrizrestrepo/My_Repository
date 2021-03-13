@@ -63,10 +63,6 @@ public class Cliente {
         return pedido;
     }
 
-    public void setPedido(List<Pedido> pedido) {
-        this.pedido = pedido;
-    }
-
     @Override
     public String toString() {
         return "Cliente{" +

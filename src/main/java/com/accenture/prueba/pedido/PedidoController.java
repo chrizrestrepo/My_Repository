@@ -24,5 +24,10 @@ public class PedidoController {
         pedidoService.editarPedido(idPedido, idProducto, idNuevoProducto);
     }
 
+    @DeleteMapping(path = {"idPedido"})
+    public void eliminarpedido(@PathVariable Long idPedido){
+        pedidoService.eliminarPedido(idPedido);
+    }
+
 
 }
