@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
-import java.util.Iterator;
+import java.util.List;
 
 
 @Service
@@ -26,6 +26,11 @@ public class PedidoService {
         this.pedidoRepository = pedidoRepository;
         this.productoRepository = productoRepository;
         this.clienteRepository = clienteRepository;
+    }
+
+
+    public Pedido traerPedidoPorId(Long idPedido){
+       return pedidoRepository.findById(idPedido).orElseThrow(() -> new IllegalStateException("el pedido con el id: "+ idPedido + "no existe"));
     }
 
     public void generarPedido(Pedido pedido){
@@ -45,22 +50,44 @@ public class PedidoService {
         pedidoRepository.save(pedido);
     }
 
-    public void editarPedido(Long idPedido, Long idProducto, Long idNuevoProducto){
+
+    public void editarPedido(Long idPedido, List<Producto> listaProductos){
         Pedido pedido = pedidoRepository.findById(idPedido).orElseThrow();
-        Iterator<Producto> iteratorPedido = pedido.getListaProductos().iterator();
 
         if(pedido.getFechaPedido().plusHours(5).isAfter(LocalDateTime.now()) || pedido.getFechaPedido().equals(LocalDateTime.now())){
-            while (iteratorPedido.hasNext()){
-                if(iteratorPedido.next().getIdProducto() == idProducto){
-                    pedido.getListaProductos().remove(productoRepository.findById(idProducto));
-                    pedido.getListaProductos().add(productoRepository.findById(idNuevoProducto).orElseThrow());
-                    break;
-                }
+            if(listaProductos.stream().mapToInt(e -> e.getPrecio()).sum() >= pedido.getTotalFactura()){
+                pedido.setListaProductos(listaProductos);
+            }else {
+                throw new IllegalStateException("el valor del pedido debe ser mayor o igual al anterior de: " + pedido.getTotalFactura());
             }
-        }else{
-            throw new IllegalStateException("solo se pueden editar los pedidos hasta 5 horas despues de realizarlo");
         }
-    }
+
+        Integer totalnuevaFactura = pedido.getListaProductos().stream().mapToInt(e -> e.getPrecio()).sum();
+
+        if(totalnuevaFactura < 100000){
+            pedido.setTotalFactura((int) (totalnuevaFactura + totalnuevaFactura*0.19) + pedido.TOTAL_DOMICILIO);
+        }else{
+            pedido.setTotalFactura((int) (totalnuevaFactura + totalnuevaFactura*0.19));
+        }
+
+        }
+
+    public void agregarProductoPedido(Long idPedido, Long idProducto){
+        Pedido pedido = pedidoRepository.findById(idPedido).orElseThrow();
+
+        if(pedido.getFechaPedido().plusHours(5).isAfter(LocalDateTime.now()) || pedido.getFechaPedido().equals(LocalDateTime.now())){
+            pedido.getListaProductos().add(productoRepository.findById(idProducto).orElseThrow());
+        }
+
+        Integer totalnuevaFactura = pedido.getListaProductos().stream().mapToInt(e -> e.getPrecio()).sum();
+
+        if(totalnuevaFactura < 100000){
+            pedido.setTotalFactura((int) (totalnuevaFactura + totalnuevaFactura*0.19) + pedido.TOTAL_DOMICILIO);
+        }else{
+            pedido.setTotalFactura((int) (totalnuevaFactura + totalnuevaFactura*0.19));
+        }
+
+        }
 
     public void eliminarPedido(Long idPedido){
         Pedido pedido = pedidoRepository.findById(idPedido).orElseThrow();
@@ -69,11 +96,11 @@ public class PedidoService {
         }else{
             Integer totalPedido = pedido.getListaProductos().stream().mapToInt(e -> e.getPrecio()).sum();
             int facturaPedido = (int) (totalPedido*0.10);
-
+            
             Cliente cliente = clienteRepository.findById(pedido.getIdCliente()).orElseThrow();
             
             pedidoRepository.deleteById(idPedido);
-
+            
             cliente.getPedido().add(new Pedido(Collections.emptyList(), facturaPedido));
         }
     }
