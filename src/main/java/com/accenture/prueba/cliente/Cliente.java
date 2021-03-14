@@ -17,7 +17,7 @@ public class Cliente {
     private String direccion;
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "fk_pedido")
-    private List<Pedido> pedido;
+    private List<Pedido> listaPedido;
 
     public Cliente() {
     }
@@ -28,11 +28,11 @@ public class Cliente {
         this.direccion = direccion;
     }
 
-    public Cliente(Long idCliente, String nombre, String direccion, List<Pedido> pedido) {
+    public Cliente(Long idCliente, String nombre, String direccion, List<Pedido> listaPedido) {
         this.idCliente = idCliente;
         this.nombre = nombre;
         this.direccion = direccion;
-        this.pedido = pedido;
+        this.listaPedido = listaPedido;
     }
 
     public Long getIdCliente() {
@@ -59,8 +59,8 @@ public class Cliente {
         this.direccion = direccion;
     }
 
-    public List<Pedido> getPedido() {
-        return pedido;
+    public List<Pedido> getListaPedido() {
+        return listaPedido;
     }
 
     @Override

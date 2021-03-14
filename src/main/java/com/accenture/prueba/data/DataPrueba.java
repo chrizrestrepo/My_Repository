@@ -14,7 +14,7 @@ import java.util.List;
 @Component
 public class DataPrueba {
 
-
+/*
 	@Bean
 	public CommandLineRunner crearListaDeProductos(ProductoRepository repository){
 		return args -> {
@@ -25,7 +25,7 @@ public class DataPrueba {
 			com.accenture.prueba.producto.Producto sudadera = new com.accenture.prueba.producto.Producto("sudadera", 40000);
 			com.accenture.prueba.producto.Producto pantaloneta = new com.accenture.prueba.producto.Producto("pantaloneta", 35000);
 			com.accenture.prueba.producto.Producto gorra = new com.accenture.prueba.producto.Producto("gorra", 25000);
-			com.accenture.prueba.producto.Producto medias = new com.accenture.prueba.producto.Producto("medias", 50000);
+			com.accenture.prueba.producto.Producto medias = new com.accenture.prueba.producto.Producto("medias", 5000);
 			com.accenture.prueba.producto.Producto boxer = new com.accenture.prueba.producto.Producto("boxer", 10000);
 			com.accenture.prueba.producto.Producto reloj = new com.accenture.prueba.producto.Producto("reloj", 55000);
 
@@ -53,4 +53,5 @@ public class DataPrueba {
             );
         };
     }
+ */
 }

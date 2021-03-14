@@ -42,20 +42,21 @@ public class PedidoService {
             pedido.setTotalFactura((int) (total + total*0.19));
         }
 
-        Cliente cliente = clienteRepository.findById(pedido.getIdCliente()).orElseThrow();
-        cliente.getPedido().add(pedido);
-
-        pedido.setFechaPedido(LocalDateTime.now());
-
         pedidoRepository.save(pedido);
+
+        Cliente cliente = clienteRepository.findById(pedido.getIdCliente()).orElseThrow();
+        cliente.getListaPedido().add(pedido);
+        pedido.setFechaPedido(LocalDateTime.now());
     }
 
 
     public void editarPedido(Long idPedido, List<Producto> listaProductos){
-        Pedido pedido = pedidoRepository.findById(idPedido).orElseThrow();
+        Pedido pedido = pedidoRepository.findById(idPedido)
+                .orElseThrow(() -> new NullPointerException("el pedido con id: " + idPedido + "no existe"));
 
-        if(pedido.getFechaPedido().plusHours(5).isAfter(LocalDateTime.now()) || pedido.getFechaPedido().equals(LocalDateTime.now())){
+        if(pedido.getFechaPedido().plusHours(5).isAfter(LocalDateTime.now()) || pedido.getFechaPedido().plusHours(5).equals(LocalDateTime.now())){
             if(listaProductos.stream().mapToInt(e -> e.getPrecio()).sum() >= pedido.getTotalFactura()){
+                pedido.getListaProductos().remove(pedidoRepository.findById(idPedido));
                 pedido.setListaProductos(listaProductos);
             }else {
                 throw new IllegalStateException("el valor del pedido debe ser mayor o igual al anterior de: " + pedido.getTotalFactura());
@@ -73,9 +74,10 @@ public class PedidoService {
         }
 
     public void agregarProductoPedido(Long idPedido, Long idProducto){
-        Pedido pedido = pedidoRepository.findById(idPedido).orElseThrow();
+        Pedido pedido = pedidoRepository.findById(idPedido)
+                .orElseThrow(() -> new NullPointerException("el pedido con id: " + idPedido + "no existe"));
 
-        if(pedido.getFechaPedido().plusHours(5).isAfter(LocalDateTime.now()) || pedido.getFechaPedido().equals(LocalDateTime.now())){
+        if(pedido.getFechaPedido().plusHours(5).isAfter(LocalDateTime.now()) || pedido.getFechaPedido().plusHours(5).equals(LocalDateTime.now())){
             pedido.getListaProductos().add(productoRepository.findById(idProducto).orElseThrow());
         }
 
@@ -101,7 +103,7 @@ public class PedidoService {
             
             pedidoRepository.deleteById(idPedido);
             
-            cliente.getPedido().add(new Pedido(Collections.emptyList(), facturaPedido));
+            cliente.getListaPedido().add(new Pedido(Collections.emptyList(), facturaPedido));
         }
     }
 

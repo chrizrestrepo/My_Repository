@@ -28,17 +28,17 @@ public class PedidoController {
     }
 
     @PutMapping(path = {"idPedido"})
-    public void agregarItemPedido(@PathVariable Long idPedido, @RequestParam Long idProducto){
+    public void agregarItemPedido(@PathVariable("idPedido") Long idPedido, @RequestParam Long idProducto){
         pedidoService.agregarProductoPedido(idPedido, idProducto);
     }
 
-    @PutMapping(path = {"idepedido"})
-    public void editarPedido(@PathVariable Long idPedido, @RequestBody List<Producto> listaProductos){
+    @PostMapping(path = {"idPedido"})
+    public void editarPedido(@PathVariable("idPedido") Long idPedido, @RequestBody List<Producto> listaProductos){
         pedidoService.editarPedido(idPedido, listaProductos);
     }
 
     @DeleteMapping(path = {"idPedido"})
-    public void eliminarpedido(@PathVariable Long idPedido){
+    public void eliminarpedido(@PathVariable("idPedido") Long idPedido){
         pedidoService.eliminarPedido(idPedido);
     }
 
