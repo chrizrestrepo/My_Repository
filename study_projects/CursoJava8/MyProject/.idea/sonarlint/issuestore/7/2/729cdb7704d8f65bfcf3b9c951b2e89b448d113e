@@ -1,0 +1,21 @@
+
+S
+java:S1197"8Move the array designator from the variable to the type.(¡şÏÖøÿÿÿÿ
+G
+java:S1612",Replace this lambda with a method reference.(Š¶íüûÿÿÿÿ
+B
+java:S1612",Replace this lambda with a method reference.(·»¢Ï
+S	java:S106"9Replace this use of System.out or System.err by a logger.(éÏ“˜ûÿÿÿÿ
+B
+java:S1612",Replace this lambda with a method reference.(Ş•¥³
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ş•¥³
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¤Òàºÿÿÿÿÿ
+A
+java:S1612#",Replace this lambda with a method reference.(®Ê•#
+A
+java:S1612#",Replace this lambda with a method reference.(®Ê•#
+S	java:S106%"9Replace this use of System.out or System.err by a logger.(«Êøâøÿÿÿÿ
+A
+java:S22010"+The return value of "collect" must be used.(œçÖß
+Q	java:S125D"<This block of commented-out lines of code should be removed.(¢ö¥¼
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(šÔç„
