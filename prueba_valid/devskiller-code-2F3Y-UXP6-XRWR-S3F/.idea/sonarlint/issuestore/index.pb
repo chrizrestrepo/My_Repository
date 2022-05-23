@@ -1,0 +1,33 @@
+
+w
+Gsrc/test/java/com/devskiller/tasks/blog/rest/CommentControllerTest.java,1\4\14bb509c4207cc9838d89ede3c08a5a5bfc2bcca
+p
+@src/main/java/com/devskiller/tasks/blog/service/PostService.java,6\5\6532181cf2dc8cf6a03dd7e96f0c25880a2b64a8
+l
+<src/main/java/com/devskiller/tasks/blog/BlogApplication.java,2\3\239009ab1af77bfdcccc7068ea8a44cd06670aad
+w
+Gsrc/test/java/com/devskiller/tasks/blog/service/CommentServiceTest.java,5\0\502fdfb4e419c81e542438fd9319df119c92cf02
+t
+Dsrc/test/java/com/devskiller/tasks/blog/service/PostServiceTest.java,6\3\6388880f541225c759d30dc4cce8439eb2d7339f
+9
+	IMPORTANT,5\8\58bf20abc8cfcd7fca8f636b0cbc48db83418aa6
+q
+Asrc/main/java/com/devskiller/tasks/blog/model/dto/CommentDto.java,2\b\2b7e43751dd8c9b52087ad16682ae0906a167127
+t
+Dsrc/main/java/com/devskiller/tasks/blog/model/dto/NewCommentDto.java,c\1\c1cbe004fe55279730373cfe012e7a98e394fab0
+v
+Fsrc/main/java/com/devskiller/tasks/blog/repository/PostRepository.java,c\e\ce53ae7ec16856df668a2c79f6a3b4417dd3d09f
+y
+Isrc/main/java/com/devskiller/tasks/blog/repository/CommentRepository.java,6\d\6d95ec401c712811f9c940c753f9ee7e28c82c40
+g
+7src/main/java/com/devskiller/tasks/blog/model/Post.java,d\1\d10c5946b7f9590f8ef2c07315c18b581e69faed
+j
+:src/main/java/com/devskiller/tasks/blog/model/Comment.java,b\d\bde591b16c017e8c30aed5e422bec5a6d9acb350
+n
+>src/main/java/com/devskiller/tasks/blog/model/dto/PostDto.java,f\5\f5496f6f3d80dc3e43339c995e48fb33c235e867
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+p
+@src/main/java/com/devskiller/tasks/blog/rest/PostController.java,7\b\7b771c25923fe5fe124ddf5ad3a4d06caca21530
+s
+Csrc/main/java/com/devskiller/tasks/blog/service/CommentService.java,7\e\7e02042b30ecff3a03f1912b75217c74a5bdfa93

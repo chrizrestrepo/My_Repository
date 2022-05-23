@@ -1,3 +1,18 @@
 
-N	java:S106"9Replace this use of System.out or System.err by a logger.(á•ªã
-U	java:S106""9Replace this use of System.out or System.err by a logger.(“µâ£8û“ØÛÅ0
+å
+java:S1130"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(∫ô⁄7
+V	java:S125"<This block of commented-out lines of code should be removed.(ÈóÔ›˚ˇˇˇˇ
+V	java:S125$"<This block of commented-out lines of code should be removed.(ÛÚÈ¬˙ˇˇˇˇ
+N	java:S106:"9Replace this use of System.out or System.err by a logger.(á•ªã
+N	java:S106?"9Replace this use of System.out or System.err by a logger.(“µâ£
+S	java:S106N"9Replace this use of System.out or System.err by a logger.(¨Ûò∞˝ˇˇˇˇ
+t
+java:S2142j"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(‰†πÄ
+N	java:S106m"9Replace this use of System.out or System.err by a logger.(∆¿≥¿
+S	java:S106t"9Replace this use of System.out or System.err by a logger.(éÂ’πˇˇˇˇˇ
+S	java:S106w"9Replace this use of System.out or System.err by a logger.(éÂ’πˇˇˇˇˇ
+O	java:S106à"9Replace this use of System.out or System.err by a logger.(»©É´
+O	java:S106å"9Replace this use of System.out or System.err by a logger.(»©É´
+q
+java:S1128
+"TRemove this unnecessary import: same package classes are always implicitly imported.(ê∑´Ñ8ÁÌÚ˙ç0

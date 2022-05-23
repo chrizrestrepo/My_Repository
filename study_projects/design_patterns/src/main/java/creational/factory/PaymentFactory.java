@@ -3,7 +3,7 @@ package main.java.creational.factory;
 
 /*
 el patron factory permite crear una instancia de cierto tipo a partir de la
-validacion de algun argumento para su creacion, en este caso es un enumerador,
+validacion de algun argumento para su creacion (en este caso es un enumerador),
 el cual mediante la validacion del argumento crea una instancia de la
 interfaz que se implemente segun el tipo
  */
