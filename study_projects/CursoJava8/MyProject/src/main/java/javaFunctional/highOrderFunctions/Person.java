@@ -1,4 +1,4 @@
-package main;
+package javaFunctional.highOrderFunctions;
 
 public class Person {
     private String name;

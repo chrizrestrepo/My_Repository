@@ -1,4 +1,4 @@
-package streamsAndLambdas;
+package javaFunctional.streamsAndLambdas;
 
 public class Cliente {
     private int identificacion;
