@@ -1,4 +1,4 @@
-package ejercicioBean2;
+package exercises.ejercicioBean2;
 
 public class Persona {
     private String id;

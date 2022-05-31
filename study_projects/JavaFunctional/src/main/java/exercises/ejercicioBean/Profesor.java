@@ -1,4 +1,4 @@
-package ejercicioBean;
+package exercises.ejercicioBean;
 
 public class Profesor extends Persona {
     private int salario;

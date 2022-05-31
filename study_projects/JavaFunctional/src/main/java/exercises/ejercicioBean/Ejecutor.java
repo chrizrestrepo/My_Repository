@@ -1,4 +1,4 @@
-package ejercicioBean;
+package exercises.ejercicioBean;
 
 import java.time.LocalDate;
 import java.util.Arrays;

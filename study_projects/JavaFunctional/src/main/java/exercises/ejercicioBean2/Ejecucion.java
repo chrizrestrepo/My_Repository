@@ -1,7 +1,6 @@
-package ejercicioBean2;
+package exercises.ejercicioBean2;
 
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Ejecucion {

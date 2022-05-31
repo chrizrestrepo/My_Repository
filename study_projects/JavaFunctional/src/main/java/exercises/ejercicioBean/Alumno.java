@@ -1,4 +1,4 @@
-package ejercicioBean;
+package exercises.ejercicioBean;
 
 public class Alumno extends Persona {
     private Colegio nombreColegio;

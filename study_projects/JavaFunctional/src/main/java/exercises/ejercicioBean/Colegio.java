@@ -1,4 +1,4 @@
-package ejercicioBean;
+package exercises.ejercicioBean;
 
 import java.util.List;
 

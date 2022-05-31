@@ -1,4 +1,4 @@
-package ejercicioBean;
+package exercises.ejercicioBean;
 
 public class Persona {
     private String nombre;

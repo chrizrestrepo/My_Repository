@@ -1,7 +1,6 @@
-package ejercicioBean;
+package exercises.ejercicioBean;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class Curso {
     enum EstadoCurso {ACTIVO, INACTIVO};
