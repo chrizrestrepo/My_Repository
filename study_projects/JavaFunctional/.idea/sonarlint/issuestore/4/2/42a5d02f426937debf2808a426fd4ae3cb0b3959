@@ -5,3 +5,7 @@ S	java:S106"9Replace this use of System.out or System.err by a logger.(ËšÓêûÿ
 S	java:S106"9Replace this use of System.out or System.err by a logger.(Ößœ³úÿÿÿÿ
 Z	java:S106"9Replace this use of System.out or System.err by a logger.(é­Ìışÿÿÿÿ8Ô¸ô·0
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‡æ¸
+i
+java:S2259"GA "NullPointerException" could be thrown; "clientMin" is nullable here.(Ößœ³úÿÿÿÿ8èòíÿ•0
+i
+java:S2259"GA "NullPointerException" could be thrown; "clientMax" is nullable here.(é­Ìışÿÿÿÿ8èòíÿ•0
