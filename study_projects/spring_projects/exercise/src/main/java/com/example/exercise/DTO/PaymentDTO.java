@@ -22,9 +22,20 @@ public class PaymentDTO {
         this.itemDTOS = itemDTOS;
     }
 
+    public PaymentDTO(Long clientId, Long billId){
+        this.clientId = clientId;
+        this.billId = billId;
+    }
+
+    public PaymentDTO(Long billId, Double amountToPay) {
+        this.billId = billId;
+        this.amountToPay = amountToPay;
+    }
+
     private String description;
     private String observation;
     private Long clientId;
     private Long billId;
+    private Double amountToPay;
     private List<ItemDTO> itemDTOS;
 }

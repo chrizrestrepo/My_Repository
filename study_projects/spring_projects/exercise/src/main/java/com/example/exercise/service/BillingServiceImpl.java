@@ -1,10 +1,8 @@
 package com.example.exercise.service;
 
-import com.example.exercise.model.Bill;
 import com.example.exercise.model.Item;
 import com.example.exercise.repository.BillRepository;
-import com.example.exercise.repository.ClientRepository;
-import com.example.exercise.service.interfaces.IPaymentService;
+import com.example.exercise.service.interfaces.IBillingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
@@ -15,26 +13,21 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 
 @Service
-public class PaymentServiceImpl implements IPaymentService {
+public class BillingServiceImpl implements IBillingService {
 
-    private final ClientRepository clientRepository;
     private final BillRepository billRepository;
-    private final ClientServiceImpl clientService;
+    private Map<String, Object> response;
 
     @Autowired
-    public PaymentServiceImpl(ClientRepository clientRepository, BillRepository billRepository, ClientServiceImpl clientService) {
-        this.clientRepository = clientRepository;
+    public BillingServiceImpl(BillRepository billRepository) {
         this.billRepository = billRepository;
-        this.clientService = clientService;
     }
 
-
     @Override
-    public Map<String, Object> createNewBillClient(String description, String observation, Long clientId) {
-        Map<String, Object> response = new LinkedHashMap<>();
-
+    public Map<String, Object> createNewBill(String description, String observation) {
+        response = new LinkedHashMap<>();
         try{
-            billRepository.save(new Bill(description, observation, clientService.findClientById(clientId)));
+            billRepository.createBill(description, observation);
         }catch(DataAccessException exception){
             throw new RuntimeException("there was an error trying to insert the record");
         }
@@ -45,7 +38,7 @@ public class PaymentServiceImpl implements IPaymentService {
 
     @Override
     public Map<String, Object> addItemsToBill(Long billId, List<Item> item){
-        Map<String, Object> response = new LinkedHashMap<>();
+        response = new LinkedHashMap<>();
 
         try{
             billRepository.findById(billId)
@@ -58,16 +51,31 @@ public class PaymentServiceImpl implements IPaymentService {
                     .orElseThrow(() -> new NoSuchElementException("the bill with id: "
                             .concat(billId.toString())
                             .concat(" not found")));
+
+            response.put("Bill_Id", billId.toString());
+            response.put("Added Items", item);
+            response.put("message", "the items were save succesfully into the bill with id: ".concat(billId.toString()));
         }catch(DataAccessException exception){
             throw new RuntimeException("there was an error trying to insert the record");
         }
-        response.put("message", "the items were save succesfully into: ".concat(billId.toString()));
         return response;
     }
 
     @Override
+    public Map<String, Object> relateBillToCustomer(Long clientId, Long billId) {
+        response = new LinkedHashMap<>();
+        try{
+            billRepository.relateBillToCustomer(clientId, billId);
+        }catch(DataAccessException exception){
+            throw new RuntimeException("there was an error trying to insert the record");
+        }
+        response.put("message", "the Bill was related to Client with id: ".concat(clientId.toString()));
+        return null;
+    }
+
+    @Override
     public Map<String, Object> doPayment(Long billId, Double amount) {
-        Map<String, Object> response = new LinkedHashMap<>();
+        response = new LinkedHashMap<>();
         try{
             billRepository.findById(billId)
                     .map(bill -> {
@@ -75,17 +83,18 @@ public class PaymentServiceImpl implements IPaymentService {
                         if(substract < 0){
                             throw new IllegalArgumentException("the value of this bill can't be less a 0 - try with another value");
                         }
-                        bill.setTotalBill(bill.getTotalBill() - amount);
+                        bill.setTotalBill(substract);
                         return bill;
                     })
                     .map(billRepository::save)
                     .orElseThrow(() -> new NoSuchElementException("the bill with id: "
                             .concat(billId.toString())
                             .concat(" not found")));
+
+            response.put("message", "payment successful");
         }catch(DataAccessException exception){
             throw new RuntimeException("there was an error trying to insert the record");
         }
-        response.put("message", "payment successful");
         return response;
     }
 }

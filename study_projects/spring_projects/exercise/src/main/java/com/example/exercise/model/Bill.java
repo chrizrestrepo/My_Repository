@@ -22,10 +22,9 @@ public class Bill implements Serializable {
         items = new ArrayList<>();
     }
 
-    public Bill(String description, String observation, Client client) {
+    public Bill(String description, String observation) {
         this.description = description;
         this.observation = observation;
-        this.client = client;
         items = new ArrayList<>();
     }
 
