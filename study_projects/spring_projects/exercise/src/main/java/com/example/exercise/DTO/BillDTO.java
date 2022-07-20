@@ -3,6 +3,7 @@ package com.example.exercise.DTO;
 import com.example.exercise.model.Bill;
 import com.example.exercise.model.Item;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.stream.Collectors;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class BillDTO {
 
     public BillDTO(Long billId, String description, String observation, Date createAt, Date createHour, Long clientId) {
@@ -45,10 +47,7 @@ public class BillDTO {
                 .map(ItemDTO::toDto)
                 .collect(Collectors.toList()));
 
-        billDTO.setTotal(bill.getItems()
-                .stream()
-                .mapToDouble(Item::calculateAmount)
-                .sum());
+        billDTO.setTotal(bill.getTotalBill());
 
         return billDTO;
     }

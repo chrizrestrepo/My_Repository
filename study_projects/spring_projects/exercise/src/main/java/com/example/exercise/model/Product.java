@@ -20,7 +20,7 @@ public class Product implements Serializable {
 
     @Id
     @SequenceGenerator(name = "product_sequence", sequenceName = "product_sequence", allocationSize = 1)
-    @GeneratedValue(generator = "product_sequence", strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "product_sequence", strategy = GenerationType.SEQUENCE)
     @Column(name = "product_id")
     private Long productId;
 

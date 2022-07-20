@@ -1,5 +1,6 @@
 package com.example.exercise.controller;
 
+import com.example.exercise.DTO.ItemDTO;
 import com.example.exercise.DTO.PaymentDTO;
 import com.example.exercise.model.Item;
 import com.example.exercise.service.BillingServiceImpl;
@@ -8,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -30,9 +30,15 @@ public class BillingController {
                 HttpStatus.CREATED);
     }
 
-    @PostMapping("/add-items")
-    public ResponseEntity<Map<String, Object>> addItemsBill(@RequestParam Long billId, @RequestBody List<Item> items){
-        return new ResponseEntity<>(billingService.addItemsToBill(billId, items), HttpStatus.OK);
+    @PostMapping("/add-items/{bill-id}")
+    public ResponseEntity<Map<String, Object>> addItemBill(@RequestBody ItemDTO itemDTO,
+                                                           @PathVariable(name = "bill-id") Long billId,
+                                                           @RequestParam(name = "product-id") Long productId ){
+        return new ResponseEntity<>(billingService.addItemToBill(
+                billId,
+                new Item(itemDTO.getAmount()),
+                productId),
+                HttpStatus.OK);
     }
 
     @PutMapping("/relate-bill")

@@ -6,9 +6,9 @@ import com.example.exercise.service.interfaces.IBillingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
@@ -16,33 +16,33 @@ import java.util.NoSuchElementException;
 public class BillingServiceImpl implements IBillingService {
 
     private final BillRepository billRepository;
+    private final ProductServiceImpl productService;
     private Map<String, Object> response;
 
     @Autowired
-    public BillingServiceImpl(BillRepository billRepository) {
+    public BillingServiceImpl(BillRepository billRepository, ProductServiceImpl productService) {
         this.billRepository = billRepository;
+        this.productService = productService;
     }
 
     @Override
+    @Transactional
     public Map<String, Object> createNewBill(String description, String observation) {
         response = new LinkedHashMap<>();
-        try{
-            billRepository.createBill(description, observation);
-        }catch(DataAccessException exception){
-            throw new RuntimeException("there was an error trying to insert the record");
-        }
-
+        billRepository.createBill(description, observation, 100L);
         response.put("message", "new bill create with the next description: ".concat(description));
         return response;
     }
 
     @Override
-    public Map<String, Object> addItemsToBill(Long billId, List<Item> item){
+    @Transactional
+    public Map<String, Object> addItemToBill(Long billId, Item item, Long productId){
         response = new LinkedHashMap<>();
 
         try{
             billRepository.findById(billId)
                     .map(bill -> {
+                        item.setProduct(productService.getProductById(productId));
                         bill.addItem(item);
                         bill.setTotalBill(bill.calculateTotalBill());
                         return bill;
@@ -53,8 +53,8 @@ public class BillingServiceImpl implements IBillingService {
                             .concat(" not found")));
 
             response.put("Bill_Id", billId.toString());
-            response.put("Added Items", item);
-            response.put("message", "the items were save succesfully into the bill with id: ".concat(billId.toString()));
+            response.put("Added Item", item);
+            response.put("message", "the item were save succesfully into the bill with id: ".concat(billId.toString()));
         }catch(DataAccessException exception){
             throw new RuntimeException("there was an error trying to insert the record");
         }
@@ -62,6 +62,7 @@ public class BillingServiceImpl implements IBillingService {
     }
 
     @Override
+    @Transactional
     public Map<String, Object> relateBillToCustomer(Long clientId, Long billId) {
         response = new LinkedHashMap<>();
         try{
@@ -70,10 +71,11 @@ public class BillingServiceImpl implements IBillingService {
             throw new RuntimeException("there was an error trying to insert the record");
         }
         response.put("message", "the Bill was related to Client with id: ".concat(clientId.toString()));
-        return null;
+        return response;
     }
 
     @Override
+    @Transactional
     public Map<String, Object> doPayment(Long billId, Double amount) {
         response = new LinkedHashMap<>();
         try{

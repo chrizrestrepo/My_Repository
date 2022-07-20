@@ -12,9 +12,11 @@ public interface BillRepository extends JpaRepository<Bill, Long> {
     @Query(value = "INSERT INTO bills (create_date, create_hour, buy_description, buy_observation, bill_id) " +
             "VALUES (NOW(), NOW(), :description, :observation, :billId)", nativeQuery = true)
     void createBill(@Param("description") String description,
-                    @Param("observation") String observation);
+                    @Param("observation") String observation,
+                    @Param("billId") Long billId);
 
     @Modifying
     @Query(value = "UPDATE bills b SET b.client_client_id = :clientId WHERE bill_id = :BillId", nativeQuery = true)
-    Bill relateBillToCustomer(@Param("clientId") Long clientId, @Param("BillId") Long billId);
+    void relateBillToCustomer(@Param("clientId") Long clientId,
+                              @Param("BillId") Long billId);
 }

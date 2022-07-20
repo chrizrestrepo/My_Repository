@@ -29,8 +29,8 @@ public class Bill implements Serializable {
     }
 
     @Id
-    @SequenceGenerator(name = "bill_sequence", sequenceName = "bill_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "bill_sequence")
+    @SequenceGenerator(name = "bill_sequence", sequenceName = "bill_sequence", allocationSize = 5)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "bill_sequence")
     @Column(name = "bill_id")
     private Long billId;
 
@@ -50,7 +50,7 @@ public class Bill implements Serializable {
     @DateTimeFormat(pattern = "^[0-2][0-3]:[0-5][0-9]$")
     private Date createHour;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST, targetEntity = Client.class)
     private Client client;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -62,6 +62,10 @@ public class Bill implements Serializable {
 
     public void addItem(List<Item> item){
         items.addAll(item);
+    }
+
+    public void addItem(Item item){
+        items.add(item);
     }
 
     public Double calculateTotalBill(){

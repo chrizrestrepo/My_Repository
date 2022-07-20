@@ -37,7 +37,7 @@ public class Client implements Serializable {
 
     @Id
     @SequenceGenerator(name = "client_sequence", sequenceName = "client_sequence", allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "client_sequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "client_sequence")
     @Column(name = "client_id")
     private Long clientId;
 
@@ -57,7 +57,7 @@ public class Client implements Serializable {
      * la opcion orphanRemoval permite decirle a JPA si se desea eliminar los registros huerfanos que no tengan relacion con
      * la tabla
      */
-    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "client", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = Bill.class)
     private List<Bill> bills;
 
     public Client() {

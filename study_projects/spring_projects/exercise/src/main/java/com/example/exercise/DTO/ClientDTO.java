@@ -2,6 +2,7 @@ package com.example.exercise.DTO;
 
 import com.example.exercise.model.Client;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.stream.Collectors;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class ClientDTO {
 
     public ClientDTO(Long clientId, String identification, String firstName, String lastName, String email) {

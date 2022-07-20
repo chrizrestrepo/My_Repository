@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.UUID;
 
 @Entity
 @Table(name = "bill_items")
@@ -16,11 +17,14 @@ public class Item implements Serializable {
 
     private static final Long serialVersionUUID = 1L;
 
+    public Item(Integer amount) {
+        this.amount = amount;
+    }
+
     @Id
-    @SequenceGenerator(name = "item_sequence", sequenceName = "item_sequence", allocationSize = 1)
-    @GeneratedValue(generator = "item_sequence", strategy = GenerationType.IDENTITY)
     @Column(name = "item_id")
-    private Long itemId;
+    @GeneratedValue
+    private UUID itemId;
 
     @Column(name = "amount")
     private Integer amount;
