@@ -12,13 +12,13 @@ insert into products(product_id, product_name, price, create_date) values (2, 'M
 insert into products(product_id, product_name, price, create_date) values (3, 'PS5 Horizon package"', 3500000.00, NOW());
 insert into products(product_id, product_name, price, create_date) values (4, 'HeadPhones Corsair"', 400000.00, NOW());
 
-insert into bills(bill_id, create_date, create_hour, buy_description, buy_observation, client_client_id) values (0, NOW(), NOW(), 'Electronic Bill From Kinetika', 'N/A', 0);
+insert into bills(bill_id, create_date, create_hour, buy_description, buy_observation, client_fk) values (0, NOW(), NOW(), 'Electronic Bill From Kinetika', 'N/A', 0);
 insert into bill_items(item_id, amount, product_fk, bill_fk) values (RANDOM_UUID(), 1, 0, 0);
 insert into bill_items(item_id, amount, product_fk, bill_fk) values (RANDOM_UUID(), 1, 3, 0);
 
-insert into bills(bill_id, create_date, create_hour, buy_description, buy_observation, client_client_id) values (1, NOW(), NOW(), 'Electronic Bill From Kinetika', 'N/A', 0);
+insert into bills(bill_id, create_date, create_hour, buy_description, buy_observation, client_fk) values (1, NOW(), NOW(), 'Electronic Bill From Kinetika', 'N/A', 0);
 insert into bill_items(item_id, amount, product_fk, bill_fk) values (RANDOM_UUID(), 2, 4, 1);
 insert into bill_items(item_id, amount, product_fk, bill_fk) values (RANDOM_UUID(), 2, 2, 1);
 
-insert into bills(bill_id, create_date, create_hour, buy_description, buy_observation, client_client_id) values (2, NOW(), NOW(), 'Electronic Bill From Kinetika', 'N/A', 2);
+insert into bills(bill_id, create_date, create_hour, buy_description, buy_observation, client_fk) values (2, NOW(), NOW(), 'Electronic Bill From Kinetika', 'N/A', 2);
 insert into bill_items(item_id, amount, product_fk, bill_fk) values (RANDOM_UUID(), 1, 1, 2);

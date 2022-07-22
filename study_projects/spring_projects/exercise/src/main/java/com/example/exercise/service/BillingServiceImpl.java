@@ -29,7 +29,7 @@ public class BillingServiceImpl implements IBillingService {
     @Transactional
     public Map<String, Object> createNewBill(String description, String observation) {
         response = new LinkedHashMap<>();
-        billRepository.createBill(description, observation, 100L);
+        billRepository.createBill(description, observation);
         response.put("message", "new bill create with the next description: ".concat(description));
         return response;
     }

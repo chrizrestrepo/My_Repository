@@ -29,8 +29,7 @@ public class Bill implements Serializable {
     }
 
     @Id
-    @SequenceGenerator(name = "bill_sequence", sequenceName = "bill_sequence", allocationSize = 5)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "bill_sequence")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "bill_id")
     private Long billId;
 
@@ -51,6 +50,7 @@ public class Bill implements Serializable {
     private Date createHour;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST, targetEntity = Client.class)
+    @JoinColumn(name = "client_fk")
     private Client client;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

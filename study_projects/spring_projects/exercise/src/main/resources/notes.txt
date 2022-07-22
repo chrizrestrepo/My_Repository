@@ -1,0 +1,9 @@
+* las relaciones Bidireccionales al parecen necesitan que el @JoinColomn se ubique en el lado del Many
+* la opcion orphanRemoval de las anotaciones @OneToMany, @ManyToOne, etc. permite decirle a JPA si se desea eliminar los registros huerfanos que no tengan relacion alguna
+* cuando hacemos un Get de alguna entidad que tenga una relacion de @OneToMany o @ManyToOne, hablamos especificamente del lado One genera un loop que como resultado nos lanza
+una excepcion, para evitarlo es necesario mapear la data devuelta por medio de una DTO o algun tipo de mapper
+* la anotacion @PrePersist nos permite guardar ciertos datos antes de la creacion de una entidad, por lo que no es necesario enviarlos
+* esta excepcion (javax.persistence.EntityExistsException: A different object with the same identifier value was already associated with the session) se da precisamente porque
+java al tener la anotacion @GeneratedValue que genera los IDs automaticamente, pues cuando una secuencia y ya existe un id que corresponda a la secuencia pues lanza esta escepcion,
+que lo que precisamente esta diciendo es que ya hay un objeto o registro con ese mismo id, esto puede aplicarse a cualquier otro escenario que no sea un id
+*

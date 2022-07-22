@@ -9,14 +9,13 @@ import org.springframework.data.repository.query.Param;
 public interface BillRepository extends JpaRepository<Bill, Long> {
 
     @Modifying
-    @Query(value = "INSERT INTO bills (create_date, create_hour, buy_description, buy_observation, bill_id) " +
-            "VALUES (NOW(), NOW(), :description, :observation, :billId)", nativeQuery = true)
+    @Query(value = "INSERT INTO bills (create_date, create_hour, buy_description, buy_observation) " +
+            "VALUES (NOW(), NOW(), :description, :observation)", nativeQuery = true)
     void createBill(@Param("description") String description,
-                    @Param("observation") String observation,
-                    @Param("billId") Long billId);
+                    @Param("observation") String observation);
 
     @Modifying
-    @Query(value = "UPDATE bills b SET b.client_client_id = :clientId WHERE bill_id = :BillId", nativeQuery = true)
+    @Query(value = "UPDATE bills b SET b.client_fk = :clientId WHERE bill_id = :BillId", nativeQuery = true)
     void relateBillToCustomer(@Param("clientId") Long clientId,
                               @Param("BillId") Long billId);
 }

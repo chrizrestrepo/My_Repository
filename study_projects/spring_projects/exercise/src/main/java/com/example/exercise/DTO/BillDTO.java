@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 public class BillDTO {
 
-    public BillDTO(Long billId, String description, String observation, Date createAt, Date createHour, Long clientId) {
+    public BillDTO(Long billId, Long clientId, String description, String observation, Date createAt, Date createHour) {
         this.billId = billId;
         this.description = description;
         this.observation = observation;
@@ -26,21 +26,21 @@ public class BillDTO {
     }
 
     private Long billId;
+    private Long clientId;
     private String description;
     private String observation;
     private Date createAt;
     private Date createHour;
-    private Long clientId;
     private List<Object> items = new ArrayList<>();
     private Double total;
 
     public static BillDTO toDto(Bill bill){
         BillDTO billDTO = new BillDTO(bill.getBillId(),
+                bill.getClient().getClientId(),
                 bill.getDescription(),
                 bill.getObservation(),
                 bill.getCreateAt(),
-                bill.getCreateHour(),
-                bill.getClient().getClientId());
+                bill.getCreateHour());
 
         billDTO.getItems().add(bill.getItems()
                 .stream()
