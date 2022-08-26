@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+    placeholder -> Da una pista de lo que el usuario tiene que introducir
+    required -> Hace que un campo sea obligatorio
+    readonly -> Hace que un campo sea de solo lectura, aunque si por alguna razon necesitamso que algun elemento no cambie su valro podemos usar este atributo
+    disabled -> Desactiva el campo, no se podrá escribir en el y por tanto no se enviara en el formulario
+    min - max -> Establece el mínimo y máximo de un campo numérico, no es obligatorio usar ambos atributos
+    minlenght - maxlenght -> Establece el minimo y máximo de caracteres de un campo de texto, este bloquea la accion de escribir luego de superar la cantidad max de caracteres
+    selected -> Equivale a checked en los select, sirve para establecer una opción por defecto
+    autofocus -> Para poner el foco por defecto al cargar el formulario
+ -->
+<body>
+    <form>
+        <div>
+            <label for="nombre" placeholder="introduzca nombre" required>Nombre</label>
+            <input type="text" id="nombre">
+        </div>
+        <div>
+            <label for="doctype">tipo de documento</label>
+            <input type="text" value="CC" readonly>
+        </div>
+        <div>
+            <select name="numbers">
+                <option value="One">One</option>
+                <option value="Two" selected>Two</option>
+            </select>
+        </div>
+        <input type="number" min="5" max="10">
+        <input type="text" minlength="2" maxlength="5" autofocus>
+        <input type="submit">
+    </form>
+</body>
+</html>

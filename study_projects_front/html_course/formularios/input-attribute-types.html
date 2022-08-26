@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+    input type:
+        button -> Visualmente es igual a la etiqueta <button>, pero el formulario no se enviará. se podria usar para ejecutar piezas de codigo de javascript de ser necesario.
+        submit -> Se utiliza para enviar el formulario, funciona igual que la etiqueta <buttom>
+
+        date: -> Se utiliza para introducir una fecha
+        datetime -> Obsoleto
+        datetime-local -> fecha y hora, no funciona en firefox
+        time -> Se utiliza para introducir una hora
+            TIP
+                *Se recomienda usar date y time para seleccionar fecha y hora
+                hidden -> Campo oculto, puede contener valor pero no se mostrará
+        month -> Se utiliza para introducir un mes
+        week -> Se utiliza pra introducir el número de semana del año
+
+        search -> Se utiliza para las barras de búsqueda
+        tel -> Se utiliza para introducir números telefónicos
+        email -> Se utiliza para introducir un email
+        password -> Se utiliza para contraseñas
+        url -> Se utiliza para introducir URLs
+        
+        color: -> Se utiliza para especificar un color
+        number -> Se utiliza para valores numéricos
+        range -> Se utiliza para establecer un rango
+        reset -> Se utiliza para resetear el formulario
+        text -> Valor por defecto
+ -->
+<body>
+    <form>
+        <input type="button" value="ejecutar">
+        <input type="text">
+        <input type="submit" value="ejecutar envio" id="submit">
+        <input type="date">
+        <input type="time" id="hora">
+        <input type="month">
+        <input type="week">
+        <input type="color">
+        <input type="number">
+        <input type="range" step="2" min="0" max="20">
+        <input type="reset">
+
+        <div>
+            <label>search</label>
+            <input type="search">
+        </div>
+
+        <div>
+            <label>telephone</label>
+            <input type="tel">
+        </div>
+                
+        <div>
+            <label>email</label>
+            <input type="email">
+        </div>
+
+        <div>
+            <label>password</label>
+            <input type="password">
+        </div>
+                
+        <div>
+            <label>url</label>
+            <input type="url">
+        </div>
+    </form>
+    
+</body>
+</html>

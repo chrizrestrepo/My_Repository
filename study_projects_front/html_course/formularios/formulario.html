@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Test</title>
+</head>
+<!--
+    form -> etiqueta que engloba el formulario
+    label -> describe el nombre del campo, debe tener el atributo for al caual se le indica un id que lo que hara sera emparejar el label con su input correspondiente
+    input -> sirve para crear un campo que llenara el usuario con la informacion. el unico atributo obligatorio del input es name, ya que este es el que permite enviar los datos al servidor por medio del metodo GET de HTML, ets epermitiria ver en la url un tipo de peticion get con requestParam, ejemplo: donuiras.com/obtenerAutos?marca=mazda&modelo=2018
+    button -> crea un boton que permite enviar el formulario 
+-->
+
+<body>
+    <form>
+        <label for="name">Nombre</label>
+        <input id="name" name="nombre">
+        <button>enviar</button>
+    </form>
+</body>
+</html>

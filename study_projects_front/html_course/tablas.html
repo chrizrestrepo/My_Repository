@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    col:nth-child(1){
+        background-color: aquamarine;
+    }
+
+    col:nth-child(2){
+        background-color: blueviolet;
+    }
+
+    col:nth-child(3){
+        background-color: bisque;
+    }
+
+</style>
+<body>
+    <!--
+        table -> etiqueta que encierra la tabla
+        tbody -> table body: define el contenido o body de la tabla, se fine despues de la eqiqueta <thead>, el uso de esta etiqueta se vuelve obligatorio en el momento en el que usemos un thead, de lo contrario no es obligatoria
+        tr -> table row: etiqueta que construye una fila
+        td -> table data: etiqueta que construye una celda, la cantidad de td define la cantidad de columnas
+        ATRIBUTOS
+            colspan: hace que valor de una celda ocupe mas celdas en la fila (fusiona celdas horizontalmente), se le manda como parametro un numero: colspan:"5"
+            rowspan: hace que el valor de una celda ocupe mas celdas en la fila siguiente, osea fusiona verticalmente las celdas. rowspan: "2"
+        caption -> es la etiqueta para ponerle titulo a una tabla, no es obligatorio, ademas se pone justo despues de la etiqueta <table>
+        thead -> table head: esta etiqueta se usa para definir la cabecera de las columnas... esta contiene dentro un tr
+        tfoot -> table foot: esta eqiqueta define un pie de tabla, se define totalmente igual a un <tr>
+        colgroup -> este etiqueta permite seleccionar columnas por medio de la etiquea <col> la cual indica la posicion de la columna en la que se esta ubicado segun la cantidad que haya, adicional si se desea hacer una fucion por asi llamarlo de las columnas para que tengan un mismo estilo se usa span para abarcar una cantidad mayor de columnas segun el numero dado en el atributo
+    -->
+    <h1>tablas</h1>
+    <table>
+        <caption>HORARIO DE CLASES</caption>
+        <colgroup>
+            <col>
+            <col span="4">
+            <col>
+        </colgroup>
+        <thead>
+            <tr>
+                <td></td>
+                <td>Lunes</td>
+                <td>Martes</td>
+                <td>Miercoles</td>
+                <td>Jueves</td>
+                <td>Viernes</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>8:30 - 9:30</td>
+                <td colspan="2">matematicas</td>
+                <td>sociales</td>
+                <td>matematicas</td>
+                <td>matematicas</td>
+            </tr>
+            <tr>
+                <td>9:30 - 10:25</td>
+                <td colspan="2">lengua</td>
+                <td>matematicas</td>
+                <td>ciencias</td>
+                <td>lengua</td>
+            </tr>
+            <tr>
+                <td>10:25 - 11:20</td>
+                <td>educacion fisica</td>
+                <td>ciencias</td>
+                <td>lengua</td>
+                <td>lengua</td>
+                <td>educacion fisica</td>
+            </tr>
+            <tr>
+                <td>11:20 - 11:45</td>
+                <td colspan="5">RECREO</td>
+            </tr>
+            <tr>
+                <td>11:45 - 12:40</td>
+                <td>ingles</td>
+                <td>sociales</td>
+                <td>ingles</td>
+                <td>turotia</td>
+                <td>ingles</td>
+            </tr>
+            <tr>
+                <td>12:40 - 13:35</td>
+                <td rowspan="2">musica</td>
+                <td>educacion fisica</td>
+                <td>plastica</td>
+                <td>religion</td>
+                <td>musica</td>
+            </tr>
+            <tr>
+                <td>13:35 - 14:30</td>
+                <td>frances</td>
+                <td>tecnologia</td>
+                <td>frances</td>
+                <td>tecnologia</td>
+            </tr>
+        </tbody> 
+        <tfoot>
+            <tr>
+                <td colspan="5">total de asignaturas</td>
+                <td>11</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

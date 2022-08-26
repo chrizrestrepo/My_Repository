@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+    fieldset -> Se utiliza para agrupar elementos dentro de un formulario
+    legend -> Representa una etiqueta para el contenido del fieldset
+    file -> Este input se utiliza para cargar archivos y enviarlos desde un formulario
+    meter -> Representa un valor dentro de un rango conocido, sus atributos son: min, max, low, high, optimum, value... este se representa como una barra que se va llenando segun el valor y va cambiando de color segun el valor del atributo value
+    progress -> Representa el progreso de una tarea, es similar a meter
+    textarea -> Se utiliza para introducir texto en un formulario, sus atributos son:
+        - cols: representa las columnas que ocupara el recuadro de text, osea el ancho
+        - rows: representa la cantidad de filas que ocupara el recuadro de texto, osea el largo
+ -->
+<body>
+    <form>
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <div>
+                <label for="firstName">Nombre</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="lastName">apellidos</label>
+                <input type="text">
+            </div>
+        </fieldset>
+        <input type="file">
+        <label for="fuel">combustible</label>
+        <meter id="fuel" min="10" max="100" low="30" high="60" optimum="80" value="78"></meter>
+    </form>
+    <form>
+        <div>
+            <label for="opinion">deje sus comentarios</label>
+        </div>
+        <textarea name="opinion" id="opinion" cols="70" rows="10"></textarea>
+    </form>
+</body>
+</html>

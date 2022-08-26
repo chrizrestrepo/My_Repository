@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- 
+    radio -> Permite seleccionar una única opción de una lista de opciones relacionadas.
+    checkbox-> Permite seleccionar varias opciones de una lista de opciones relacionadas
+    select -> Crea una lista de opciones donde podemos seleccionar una o varias opciones cada opción irá dentro de una etiqueta <option> </option> 
+        - Si tenemos muchas opciones podemos ordenarlas por categorías a través de la etiqueta <optgroup> con el atributo label para nombrar la categoría
+    datalist -> esta etiqueta sirve para crear una lista similar al select, pero esta a diferencia de la anterior tiene una barra de busqueda que funciona como filtro, adicional a que esta nos muestra el valor del atributo de la etiqueta <option>... esta etiqueta siempre se define despues de un <input> de tipo list, que a su vez contenga un atributo list="{nombre-lista}", el cual sera el que se relacionara con el datalist por medio del atributo id="id-datalist"
+-->
+
+<body>
+    <form>
+        <h1>Inputs de Seleccion</h1>
+        <h2>input Radio</h2>
+        <!--el atributo value es obligatorio en el input, ya que este es el que nos indica cual es el valor del input-->
+        <!--el atributo name permite decirle al formulario a que grupo de inputs o categoria pertenece el input-->
+        <div>
+            <label for="Masculino">Masculino</label>
+            <input type="radio" name="gender" id="Masculino" value="Masculino">
+        </div>
+        <div>
+            <label for="Femenino">Femenino</label>
+            <input type="radio" name="gender" id="Femenino" value="Femenino">
+        </div>
+        <!--el atributo cheked del input indica el valor por defecto por lo que el input estara ya seleccionado-->
+        <div>
+            <label for="Desconocido">Desconocido</label>
+            <input type="radio" name="gender" id="Desconocido" value="Desconocido" checked>
+        </div>
+
+        <h2>input checkbox</h2>
+        <!--el input checkbox es similar al radio sino que este permite seleccionar varios elementos-->
+        <div>
+            <label for="CSS">CSS</label>
+            <input type="checkbox" name="lenguajes" id="CSS" value="CSS">
+        </div>
+        <div>
+            <label for="HTML">HTML</label>
+            <input type="checkbox" name="lenguajes" id="HTML" value="HTML" checked>
+        </div><div>
+            <label for="JavaScript">JavaScript</label>
+            <input type="checkbox" name="lenguajes" id="JavaScript" value="JavaScript">
+        </div>
+    </form>
+    <form>
+         <!--los select crean un tipo de lista desplegable, aunque tambien podemos crear esta misma lista con el atributo multiple para que no sea desplegable y veamos todo el contenido -->
+         <h2>input etiqueta select</h2>
+         <select name="lenguajes" multiple>
+             <option value="HTML">HTML</option>
+             <option value="CSS">CSS</option>
+             <option value="JavaScript">JavaScript</option>
+         </select>
+    </form>
+
+    <form>
+        <h2>input etiqueta select 2</h2>
+        <h3>elige tu mascota</h3>
+        <select name="mascotas">
+            <option></option>
+            <optgroup label="cuadrupedos">
+                <option value="perro">perro</option>
+                <option value="gato">gato</option>
+                <option value="hamster">hamster</option>
+                <option value="conejo">conejo</option>
+            </optgroup>
+            <optgroup label="alados">
+                <option value="canario">canario</option>
+                <option value="loro">loro</option>
+            </optgroup>
+            <optgroup label="otros">
+                <option value="serpiente">serpiente</option> 
+            </optgroup>
+        </select>
+    </form>
+
+    <!--en el ejemplo vemos que la lista nos devuelve el valor del value y el nombre que le definimos, en el caso de los que no sabemos los nombres en ingles nos devuelve unicamente el valor del atributo value, la busqueda desde el filtro puede hacerse por cualquiera de los dos valores nombre o el valor del atributo value-->
+    <h2>input tipo list con datalist</h2>
+    <form>
+        <input type="list" list="lista-animales">
+        <datalist id="lista-animales">
+                <option value="lion">Leon</option>
+                <option value="camel">camello</option>
+                <option value="tiger">tigre</option>
+                <option value="eagle">aguila</option>
+                <option value="buho"></option>
+                <option value="guacamaya"></option>
+        </datalist>
+    </form>
+</body>
+</html>

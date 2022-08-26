@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get vs post</title>
+</head>
+<!--el unico atributo obligatorio del input es name, ya que este es el que permite enviar los datos al servidor por medio del metodo GET de HTML, ets epermitiria ver en la url un tipo de peticion get con requestParam, ejemplo: donuiras.com/obtenerAutos?marca=mazda&modelo=2018-->
+<body>
+    <form action="enviar.html" method="GET">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name">
+        <label for="surname">Apellido</label>
+        <input type="text" id="surname" name="surname">
+        <input type="submit">
+    </form>
+</body>
+
+</html>

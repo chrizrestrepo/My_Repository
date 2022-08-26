@@ -1,0 +1,32 @@
+* para crear la base de un archivo html de manera automatica, solo basta escribir "!" y dar enter, ey este creara la base del archivo HTML
+* la etiqueta <!DOCTYPE html> indica cual es el estandar del documento que estamos siguiendo
+* los elementos de bloque son aquellos que a pesar de su contenido ocupan todo el ancho de la pagina
+* los elementos de Linea son aquellos que solo ocupan el espacio de la linea del contenido que contengan, por lo que al no ser bloques de elementos al no haber una separacion entre estos, los mismos se juntan
+* los textos que definimos dentro de las etiquetas son los nombres que les damos a estas
+* las rutas absolutas normalmente nos llevan a salir de nuestro proyecto y buscar las rutas a otro lugar talves fuera de nuestro proyecto o directorio
+* las rutas relativas pueden ser de dos tipos, la primera es desde el directorio en el que nos encontramos ejp: "index.html", en los casos que debamos ingresar a un carpeta que esta al mismo nivel navegamos con el nombre de la carpeta y luego el nombre del archivo ejp: "/ejemplo/ejemplo.html"... por el contario si necesitamos salir de la carpeta para tomar un archivo de una carpeta hacia atras lo hacemos asi: "../index.html" o "../carpeta/index.html". se debo poner un ../ por cada nivel que deseemos ir hacia atras. por otro lado podemos definir una ruta relativa desde la raiz del proyecto definiendo de inicio "/" esto nos llevara al punto mas alto que pueda llegar la raiz
+* la carpeta en la que ubicamos todos los recursos adicionales debe llamarse assets, aqui van imagnes, videos, etc.
+
+ATRIBUTES
+*estos son aquellos que se ubican dentro de las etiquetas y tienen diferentes usos, adicional podemos anidar varios de estos dentro de una misma etiqueta, solo basta separarlos con un espacio, algunos son:
+class -> este atributo permite mediante su uso, hacer referencia a el en CSS para darle un stylo luego, llamandolo por el nombre del atributo <h1 class="titulo1">Hola Mundo</h1>
+id -> este es un atributo unico que se utiliza para seleccionar el elemento desde un JS, y permite realizar navegacion por medio de anclas
+title -> este atributo permite dar una descripcion al elemento que lo contenga, por o que al navegar y situarse en el sale un tooltipo con una descripcion (es bastante comun)
+data -> es un atributo que permite guardar un valor en una etiqueta, la semantica es la siguiente <p data-{el valor que queramos}={valor}></p>. en HTML no tiene mucho uso pero a la hora de usar JS es importante
+href -> este atributo permite linkear un archivo del proyecto o un link externo, se usa con la etiqueta <a href="https://google.com"></a>
+target -> se usa para definir la forma de navegacion, se le puede definir como: "_blank" o "_self", la diferencia entre ambas es que self abre el link en la misma pestana y blank abre una nueva pestana. se usa en la etiqueta <a href="https://google.com" target="_blank"></a>
+dowmload -> se usa con la etiqueta <a></a> permite descargar algun recurso del servidor (esto quiere decir que solo se pueden descargar archivos siempre y cuando esten en nuestro servidor). la sintaxis es esta: <a href="gato.jpeg" download></a> 
+
+ETIQUETAS
+<head> -> representa la metadata de la pagina web, aqui se define el lenguaje, y demas informacion que el a nivel de la pagina no se ve.
+<html> -> representa el principio y fin de la pagina 
+<body> -> la etiqueta body es la representacion del cuerpo o contenido de la pagina web
+<h1/h6> -> ha de entender que los titulos representados con la etiqueta h1 hasta h6, tienen un orden, por lo que el contenido de un h2 hace parte de h1, y h3 hace parte del contenido de h2, y asi sucesivamente, los parrafos acen parte de cualquiera de estos
+<header> -> es el encabezado de la pagina, normalmente aqui se encuentra el menu de navegacion, el logo de la pagina, entre otros elementos comunes en una pagina web, tambien pueden ser usados por los <article> ya que este es un contenido independiente
+<main> -> es el contenido principal de una pagina web
+<footer> -> la etiqueta footter es el pie de pagina
+<article> -> un articulo es la representacionde un contenido independiente, se agrupan dentro de los <section>, por lo que un section puede contener varios de estos, adicional estos pueden poseer un <header> y <footer> propios... ademas un <article> puede tener varios setion dentro, los aticle deben tener un nombre osea un <h?> sino saca error
+<section> -> es la representacion de una section de contenido, dentro de la misma podemos tener varias etiquetas <article> o en su defecto un section tambien puede poseer varios section dentro.
+<aside> -> se usa para represntar contenido indirectamente relacionado pero que no forma parte del contenido principal, puede ubicarse dentro del <main> o puede dejarse fuera de este, ya que este no hace parte del contenido principal y puede quedar por fuera lo cual semanticamente podria ser mas correcto
+<a> -> semanticamente significa ancla, dentro de esta etiqueta podemos definir los links de navegacion mediante el uso del atributo href
+<nav> -> permite crear un menu de navegacion, podemos navagar por medio del id del atribute. podemos definir dentro de esta etiqueta varios <h?>, <p> o lo que deseemos y enidarle la etiqueta <a></a> para navegar y en el href hacer referencia al id del elemento al que  deseamos navegar, indicandole un 

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        ul -> unordered list: se usan cuando el orden de los elementos no importa
+        ATRIBUTOS UL:
+        type: Estilo de los items (disc, square, circle)
+
+        ol -> ordered list: se usan cuando se necesita tener el contenido de la lista ordenado
+        ATRIBUTOS OL:
+        type: Estilo de numeracion (1, A, a, I, i)
+        start: inicio de secuencia (un numero)
+
+        li -> list element: es la forma en que definimos un item u elemento en la lista
+
+        dl -> definition list: Se usa para hacer listas de definiciones.
+        las listas de definicion contienen dos etiquetas:
+            dt -> definition term: el termino que vamos a definir 
+            dd -> definition description: la descripcion del termino
+    -->
+
+    <h1>listas</h1>
+
+    <nav>
+        <ul>
+            <li><a href="/navegacion/index.html#aprenderJava">Aprende Java</a></li>
+            <li><a href="/navegacion/index.html#aprenderHTML">Aprende HTML</a></li>
+            <li><a href="/navegacion/index.html#aprenderCSS">Aprende CSS</a></li>
+            <li><a href="/navegacion/index.html#aprenderJavaScript">Aprende JavaScript</a></li>
+            <li><a href="/navegacion/index.html#aprenderAngular">Aprende Angular</a></li>
+        </ul>
+    </nav>
+     
+    <h2>unordered list</h2>
+    <ul type="circle">
+        <li>pan</li>
+        <li>huevos</li>
+        <li>leche</li>
+    </ul>
+
+    <!--las listas ordenadas a nivel de html se muestran con numeros los cuales van en el orden que se agregan los li-->
+    <h2>ordered List</h2>
+    <ol type="I" start="5">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScrpt</li>
+    </ol>
+
+    <h2>definition list</h2>
+    <h3>lenguejes de programacion</h3>
+    <dl>
+        <dt>html</dt>
+        <dd>es un lenguaje de demarcado de hipertexto, aunque este no es condiderado como tal un lenguaje de programacion por su poca complejidad</dd>
+        <dt>CSS</dt>
+        <dd>es el lenguaje que le da estilo a los diferentes elementos u etiquetas expuestas en el archivo html</dd>
+    </dl>
+</body>
+</html>
