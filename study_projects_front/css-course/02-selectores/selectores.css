@@ -1,0 +1,33 @@
+/*selector universal*/
+*{
+    background-color: teal;
+    letter-spacing: 5px;
+}
+
+/*Selector de tipo*/
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1{
+    color: crimson;
+    font-size: 20px;
+    background-color: rgb(187, 132, 69);
+}
+
+/*selector de clase*/
+.batman{
+    color: bisque;
+    background-color: black;
+}
+.xmen{
+    color: white;
+    background-color: blue;
+}
+
+/*selector por Id*/
+#TheWolverineMovie{
+    color:gray;
+    border: 2px;
+    border-color: blue solid;
+    background-color: wheat;
+}

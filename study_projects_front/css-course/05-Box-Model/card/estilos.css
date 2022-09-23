@@ -1,0 +1,26 @@
+*{
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+/*los elementos de bloque tienen un display:block por defecto*/
+/*los elementos de linea tienen un display:inline */
+
+/*podemos cambiar el valor del display de cualquiera de los dos elementos, en el ejemplo se invirtieron los valores por defecto*/
+/*los elementos de linea unicamente se les puede aplicar los estilos horizontales, left-right ya que estos pueden modificarse sin ampliar el contenido, mientras que los elementos de bloque si gozan de todas las propiedades de padding y demas.*/
+/*la mejor opcion es usar la propiedad inline-block, ya que esta permite a los elementos de linea gozar de todas las propiedades de las cuales los elementos de linea no gozan, y que en algunos casos generan comportamientos extranos, ya que se le pueden aplicar algunos estilos de top y bottom*/
+.title{
+    background-color: yellow;
+    display: inline;
+    margin: 0 auto; 
+}
+
+.btn{
+    background-color: red;
+    color: white;
+    font-style: oblique;
+    display: block;
+    margin: 0 auto; 
+    width: 700px;
+    text-align: center;
+}

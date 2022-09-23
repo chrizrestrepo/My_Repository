@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial; 
+}
+
+.nav{
+    font-size: 10px;
+    background-color: aqua;
+    padding: 0 100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.nav__logo{
+    height: 100%;
+}
+
+.nav__link{
+    color: inherit; 
+
+}

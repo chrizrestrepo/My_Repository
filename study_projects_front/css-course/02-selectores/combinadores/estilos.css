@@ -1,0 +1,44 @@
+/*combinadores de descendientes*/
+/*estos combinadores se representan con un espacio, sirve para darle estilo a las clases hijas dentro de una etiqueta, se llaman descendientes, ya que el concepto es parecido a la herencia en donde las etiquetas que estan por encima de otras son los padres o ancestros de las mas internas*/
+ul .lista{
+    text-decoration: dashed;
+    color: blue;
+}
+
+/*la referencia a las clases se hace con un punto al inicio*/
+.listaDias .lista{
+    list-style: lower-greek;
+    text-decoration: line-through;
+}
+
+/*combinador de hijos directos*/
+/*este tipo de selector solo afecta a los hios directos de la clase principal, y no a los hijos o descendientes de sus hijos directos*/
+.todo > .lista{
+    list-style: lower-roman;  
+}
+
+/*combinador de hermano adyacente*/
+/*este combinador permite dar stylo a la clase hermano adyacente, osea a la de la siguiente linea*/
+/*si se hace con el selector universal despues del signo {+} tomara la siguiente etiqueta adyacente, por el contario si le indicamos luego del signo {+} el nombre de la clase, esta se aplicara a la siguiente clase con el dicho nombre sobreescribiendo asi la que contenga el selector universal, si no existe no lo aplica o si existe el caso de tener los dos estilos se plicara el uno o el otro segun lo que se encentre a nivel de HTML*/
+/*este tipo de selectores nos permiten hacer animaciones*/
+.subtitulo + *{
+    background-color: rebeccapurple;
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.subtitulo + .parrafo{
+    background-color: burlywood;
+    font-size: large;
+    font-style: italic;
+    color: orangered;
+}
+
+/*combinador de hermanos generales*/
+/*es similar al combinador de hermano adyacente, la direncia radica en que este tipo de selector selecciona o todos los hermanos adyacentes que cumplan con la condicion o nombre de la clase*/
+.subtitulo2 ~ .parrafo{
+    background-color: steelblue;
+    color: orchid;
+    font-style: unset;
+    font-size: 25px;
+}

@@ -1,0 +1,14 @@
+div{
+    color: blue;
+    font-size: large;
+    background-color: aquamarine;
+}
+.lorem{
+    color: blueviolet;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 100in;
+    border-color: blue;
+}
+p{
+    color: brown;
+}

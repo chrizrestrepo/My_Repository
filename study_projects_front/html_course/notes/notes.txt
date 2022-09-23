@@ -6,6 +6,7 @@
 * las rutas absolutas normalmente nos llevan a salir de nuestro proyecto y buscar las rutas a otro lugar talves fuera de nuestro proyecto o directorio
 * las rutas relativas pueden ser de dos tipos, la primera es desde el directorio en el que nos encontramos ejp: "index.html", en los casos que debamos ingresar a un carpeta que esta al mismo nivel navegamos con el nombre de la carpeta y luego el nombre del archivo ejp: "/ejemplo/ejemplo.html"... por el contario si necesitamos salir de la carpeta para tomar un archivo de una carpeta hacia atras lo hacemos asi: "../index.html" o "../carpeta/index.html". se debo poner un ../ por cada nivel que deseemos ir hacia atras. por otro lado podemos definir una ruta relativa desde la raiz del proyecto definiendo de inicio "/" esto nos llevara al punto mas alto que pueda llegar la raiz
 * la carpeta en la que ubicamos todos los recursos adicionales debe llamarse assets, aqui van imagnes, videos, etc.
+* recordar usar el protocolo ogp que es el estandar de Facebook para la creacion de la metadata del archivo HTML, este se usa con el fin de que podamos mostrar cierto contenido cuando se comparta la pagina en alguna parte y no sea el navegador quien elija que mostrar. para Twitter se usa TwitterCard.
 
 ATRIBUTES
 *estos son aquellos que se ubican dentro de las etiquetas y tienen diferentes usos, adicional podemos anidar varios de estos dentro de una misma etiqueta, solo basta separarlos con un espacio, algunos son:

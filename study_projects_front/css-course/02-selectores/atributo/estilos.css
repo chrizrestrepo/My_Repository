@@ -1,0 +1,22 @@
+/*selector de atributos*/
+[class]{
+    background-color: aquamarine;
+}
+
+[type="text"]{
+    background-color: blue;
+    color: yellow;
+    font-style: bold;
+    font-style: italic;
+}
+
+/*esta es la forma de hacer un filtro por texto, y asi dar unicamente stylo a las etiquetas que contengan en algun lado la palabra indicada tal cual se indica*/
+/*el simbolo{~} busca los elementos que contengan la palabra exacta y aplica el stylo a quien la contenga*/
+/*el simbolo{^} busca los elementos que contengan la palabra indicada como prefijo del atributo, osea incie con dicha palabra*/
+/*el simbolo{$} busca los elementos que contengan la palabra indicada como sufijo del atributo, osea termine con dicha palabra*/
+/*el simbolo{*} busca los elementos que contengan la palabra indicada en el lugar que sea, aun estando combinada con otra palabra*/
+[value~="courseCSS"]{
+    background-color: red;
+    color: yellowgreen;
+    font-size: 30px;
+}

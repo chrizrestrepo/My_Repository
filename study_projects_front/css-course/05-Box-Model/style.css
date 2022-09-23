@@ -1,0 +1,102 @@
+body{
+    font-family: 'Times New Roman';
+}
+
+/*capa de contenido*/
+/*definimos el max-width cuando el ancho no esta definido o esta definido auto(este es el valor por defecto), este stylo tiene prevalencia sobre los demas sin importar si esta anotado con !important*/
+.card{
+    background-color: royalblue; /*color de fondo*/
+    color: black; /*color del contenido de la etiqueta*/
+    width: auto; /*ancho del contenido*/
+    width: 700px;
+    max-width: 500px; /*permite definir un ancho maximo a un elemento*/
+    min-width: 200px;
+    width: 200px;
+
+    overflow: scroll; /*permite esconder el texto que se desborda, hidden esconde el contenido, scroll permite realizar scroll aunque este es el valor por defecto o auto*/
+
+    height: 500px; /*alto del contenido*/
+    max-height: 300px; /*altura maxima*/
+    min-height: 200px; /*altura minima*/
+    height: 100px;
+    
+}
+
+.card__title{
+    color: yellowgreen; 
+}
+
+/*hay estilos en CSS que son abreviados, llamados shortHand, ejemplo de ello son las etiquetas padding, border, etc. que agrupan varias etiquetas*/
+.card2{
+    background-color: rgba(255, 0, 0, 0.664);
+    color: white;
+    width: 350px;
+    height: 100px;
+    padding: auto; /*es el tamano del margen del elemento, este agrega el margen en los cuatros lados del cuadrado (arriba, derecha, abajo, izquierda), lo cual incrementa el tamano del elemento*/
+    padding-top: 50px; /*agrega relleno en la parte de arriba del elemento*/
+    padding-left: 50px; /*agrega relleno en la parte izquierda del elemento*/
+    padding-bottom: 50px; /*agrega relleno en la parte de abajo del elemento*/
+    padding-right: 20px; /*agrega relleno en la parte de derecha del elemento*/
+
+    padding: 30px 50px 40px 30px; /*(shordhand)se puede definir el padding, de esta manera y asi definimos los rellenos de los cuatro lados (arriba, derecha, abajo, izquierda), el orden en sentido de las manesillas de un reloj... si se envian dos valores estos se aplicaran asi: el primer valor se aplicqa arriba y abajo, y el segundo en ambos lados (left, rigth), adicional si se gregan 3 valores se aplicaran igual que cuando se envian los 4 en sentido de las manecillas del reloj*/
+
+    border-style: solid; /*(shorthand) define el stylo del borde*/
+    border-color: gray; /*(shordhand) define el color del borde*/
+    border-width: 20px; /*(shorhand) define el tamano del borde*/
+
+    border-top-width: 15px; /*grosor borde superior*/
+    border-right-width: 15px; /*grosor borde derecho*/
+    border-left-width: 10px; /*grosor borde izquierdo*/
+    border-bottom-width: 20px; /*grosor borde inferior*/
+
+    border-top-color: yellow; /*color borde superior*/
+    border-right-color: rgba(255, 60, 0, 0.877); /*color borde derecho*/
+    border-left-color: yellow; /*color borde izquierdo*/
+    border-bottom-color: rgba(255, 60, 0, 0.877); /*color borde inferior*/
+
+    border: 15px solid yellow; /*(shordhand)el borde toma por defecto el color del stylo color sino se define, el primer parametro es el tamano o grosor del borde, el segundo el estilo y el tercero el color */
+
+    border-top-style: inset; /*estilo borde superior*/ 
+    border-right-style: double; /*estilo borde derecho*/ 
+    border-bottom-style: dotted; /*estilo borde inferior*/
+    border-left-style: groove; /*estilo borde izquierdo*/
+
+    margin: 25px; /*(shorthand) permite dar un margen al elemento, todos los elementos tienen un margin por defecto si no se les declara*/
+    margin: 0 auto; /*esta es la forma de centrar elementos de bloque, sino se cumple hay que usar los diferentes stylos shorthand para centrar*/
+}
+
+.card2__paragraph{
+    font-size: 10px;
+}
+
+.card2__title{
+    color:rgb(229, 255, 0);
+    font-size: 30px; 
+    font-family: 'Arial Narrow Bold';
+    font-weight: 100;
+}
+
+/*COLAPSO DE MARGENES*/
+/*este es un incoveniente que se presenta en los elementos en los margenes horizontales, en donde estos se fucionan... por lo que se aplica directamente al margin-top y margin-bottom, asi que este comportamiento se presente cuando dos hermanos adyacentes chocan sus margenes, lo cual genera una fusion de estos y el tamano que predomina siempre es el mayor, tal cual el ejemplo, en donde el margen de main es mayor al de la clase footer. aunque cuando inspecccionamos vemos que cada elemento tiene su propio margen, ya que eso es lo que estamos declarando*/
+.main{
+    background-color: steelblue;
+    color: white;
+    margin-bottom: 70px;
+    padding-top:10px
+}
+
+/*para solucionar el problema del colapso de margenes podemos jugar con los valores de los margenes, o bien manipular las otras dos capas internas antes del margen que son: border y padding para rellenar los pixeles que generan el colapso de los margenes*/
+.main_title{
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.footer{
+    background-color: slateblue;
+    color: white;
+    margin-top: 80px;
+}
+
+/*existe un estilo o propiedad llamada box-sizing, la cual por medio del valor de border-box o content-box (box-sizing: content-box) aplica los margin, padding, width, height, border y demas shorthand de manera definitiva, lo que significa que este da los tamanos exactos y el restante lo aplica al contenido*/
+
+/*es posible dar valores negativos a los estilos*/ 

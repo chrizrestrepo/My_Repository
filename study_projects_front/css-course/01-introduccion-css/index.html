@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primer codigo CSS</title>
+    <!--existen tres formas de dar estilos a un selector, 
+        -la primera es en linea (<div class="cuadrado" style="color:blue; font-size: large;">!hola Mundo!</div>)
+        -la segunda es incrustar stylos en el archivo HTML por medio de la etiqueta style
+        -la tercera por medio de la etiqueta link, donde al atributo <rel> se le indica que vamos a relacionar una hoja de estilos usando la palabra "stylesheet" y finalmente se relaciona con el atributo href
+
+            esta ultima opcion es la mas indicada ya que solo es necesario importar los stylos, y estos se aplicaran a los distintos selectores del archivo HTML
+    -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!--
+        para llamar los selectores desde el atributo class en el archivo de css, solo es necesario poner .{nombre-clase} ejemplo:
+        .cuadrado{
+            color: blue;
+        }
+    -->
+    <div class="cuadrado">!hola Mundo!</div>
+    <p class="lorem">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit pariatur, animi, cum eos doloribus, quidem et ullam nobis molestiae quasi voluptas sequi! Quas mollitia harum illo. Inventore sunt id dicta.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi cupiditate natus earum voluptatum dolorem ab, asperiores omnis excepturi tempore nihil voluptas, reiciendis veniam ipsam perferendis distinctio libero, dicta adipisci laborum!</p>
+</body>
+</html>

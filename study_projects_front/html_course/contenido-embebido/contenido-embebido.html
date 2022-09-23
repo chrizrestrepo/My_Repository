@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img, video{
+            max-width: 50%;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!--
+    img -> permite insertar una imagen, sus atributos:
+        src - que es la fuente de donde porviene la imagen a usar
+        alt - es el nombre o descripcion que se le da a la imagen en caso de que esta no se pueda cargar o talves este eliminada del proyecto. este atributo es obligatorio.
+        srcset - es un atributo alterno a src, en donde este selecciona la imagen segun una condicion la cual es dada segun el DPR que se tenga en pantalla, por lo que segun este se mostrara una imagen o la otra. algunos navegadores no soportan la etiqueta srcset (internet explorer)
+            notes -> existen ciertos tipos de imagenes las cuales se dividen en un par de grupos que son:
+            imagenes de mapa de bits: son aquellas que estan compuestas por pixeles, por lo que al acercarnos demasiado se ven como cuadros (jpeg, png, gif, etc), ademas existen otro tipo de imagenes desarrolladas por google que son de tipo webp, las cuales usualmente pesan menos por lo que es una buena opcion usarlas.
+            imagenes de tipo vectorial: son imagenes de vector (vsg), estas se pintan en la pagina por medio de coordenadas
+    
+    figure -> esta etiqueta se usa para la insercion de algun tipo de contenido que este relacionado con el tema que se este hablando, pero que este no es totalmente necesario y es opcional (normalmente se ve su uso con imagenes pero no es obligatorio que se haga de esta manera
+    )
+    figcaption -> esta etiqueta se usa dentro de la etiqueta <figure> y sirve para ponerle un nombre al contenido
+
+    audio -> permite insertar audio, sus atributos son: 
+        controls - si no se tiene este atributo no se mostrara el menu de reproduccion del audio insertado
+        autoplay - reproduce el audio inmediatamente se abra la pagina, aunque hay algunos navegadores que bloquea la auto reproduccion por temas de no molestar al usuario
+        muted - este atributo reproduce el sonido en mute, este no se es bloqueado por el navegador
+        loop - este atributo permite que el audio se reproduzca nuevamente inmediatamente termina
+
+    video -> permite insertar un video, este cuenta con los mismos atributos de la etiqueta <audio> adicionando el atributo poster="{imagen-portada-video}"
+
+    iframe -> esta etiqueta normalmente nos las brindan algunas webs para compartir su contenido dentro de nuestra pagina, el problema es que este relentiza un poco la carga de la pagina al este tratar de traer la pagina a nuestra web
+
+    CONCEPTOS: 
+        DPR -> que traduce Device Pixel Ratio representa el tamano que tenemos en pantalla para dibujar o pintar lo que deseemos entre mas pequeno sea el dispositivo mayor es el DPR. lo podemos mirar ocn la pagina: whatismyviewport.com  
+-->
+    <main>
+        <h1>insercion de imagen</h1>
+        <img src="/contenido-embebido/assets/imagenes/733547.svg" alt="logo facebook">
+
+        <!--podemos hacer dos tipos de inserciones de imagenes de contenido con las imagenes de tipo vectoriales, por ejemplo en el caso que solo deseemos cambiarle tamano a la imagen es mas apropiado usar la etiqueta <img>, por el contrario si deseamos cambiar algunas propiedades de la imagen u icono como el color o talves animarla es mas apropiado modificar el codigo de la imagen svg como en el ejemplo que se pasa el color del logo de facebook a rojo-->
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+        <path style="fill:#d21919;" d="M448,0H64C28.704,0,0,28.704,0,64v384c0,35.296,28.704,64,64,64h384c35.296,0,64-28.704,64-64V64
+            C512,28.704,483.296,0,448,0z"/>
+        <path style="fill:#360a0a;" d="M432,256h-80v-64c0-17.664,14.336-16,32-16h32V96h-64l0,0c-53.024,0-96,42.976-96,96v64h-64v80h64
+            v176h96V336h48L432,256z"/>
+        </svg>
+
+        <!--en este ejemplo el DPR e=necesario para visualizar la imagen mobile es de 2, puesto en otras palabras un zoom de 200% -->
+        <!--REVISAR NUEVAMENTE-->
+        <img srcset=
+        "/contenido-embebido/assets/imagenes/mar_y_rocas.jpg, 
+        /contenido-embebido/assets/imagenes/mar_y_rocas_mobile.jpg 2x" alt="imagen de rocas en el mar">
+
+        <h1>insercion de audio</h1>
+        <audio src="/contenido-embebido/assets/audio/MacDeMarco - Without_Me.mp3" controls></audio>
+        
+        <h1>insercion de video</h1>
+        <video src="/contenido-embebido/assets/videos/Chapter.mp4" controls poster="/contenido-embebido/assets/imagenes/mar_y_rocas.jpg">chapterOne</video>
+        
+        <h1>Iframe de Youtube Mac Demarco</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/j-m-tZty1Js" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <h1>uso de etiqueta Figure</h1>
+        <h2>MacDeMarco Lyrics</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci magni voluptatum corrupti distinctio labore eveniet aliquid unde veritatis, voluptas aspernatur sint aperiam laborum sit necessitatibus repellat explicabo quod inventore velit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quidem, cumque dolore iusto alias consectetur reprehenderit aliquid accusamus. Sit eaque qui explicabo facere, accusamus vitae nulla quaerat consequuntur minima sint?</p>
+        <figure>
+            <img src="/contenido-embebido/assets/imagenes/mar_y_rocas_mobile.jpg" alt="Without_Me_Mac_DeMarco_Audio">
+            <figcaption><i>Without Me - Mac DeMarco</i></figcaption>
+        </figure>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quis atque corrupti quo aspernatur sunt, inventore quisquam, voluptatem eum adipisci doloremque labore consectetur enim a. Facere, reiciendis nostrum! Ab, eveniet?</p>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,68 @@
+*{
+    margin: 30px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial;
+}
+
+.image{
+    width: 250px;
+    height: 400px;
+    object-fit: cover;
+    /*
+    la propiedad border radius es un short hand, por lo que aplicara el stylo a los cuatro bordes, este creara un obalo si las medidas no son exactas al declarar que el radio es del 50%, si la figura es un cuadrado se creara un circulo y al ser un shorthand se pueden aplicar los stylos por separado. estos son los shorthand: 
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    */
+    border-radius: 50%;
+}
+
+.image_2{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.image_3{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.image_4{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    /*
+    la propiedad box-shadow crea una copia exacta de la forma del elemento. sus valores son:
+    - offset-x: permite el movimiento de la sombra de derecha a izquierda (obligatorio) valores negativos hacia la izquierda / positivos a la derecha
+    - offset-y: permite el movimiento de la sombra de arriba a abajo (oblicatorio) valores negativos hacia arriba / positivos hacia abajo
+    - blur: permite difuminar la sombra
+    - spread: permite expasir la sombra
+    - color: el color por defecto de la sombra es negro
+    (este es el orden en el que se declara en el shorthand de la propiedad sombra, todos los valores se de manera numerica)
+    ademas puedo crear varias sombras a partir de un mismo elemento, separando las propiedades con una coma.
+    puedo crear cuantos sombras desee
+    */
+    box-shadow:0 0 70px 50px rgb(51, 2, 51), 
+        100px -130px 70px rgba(3, 40, 109, 0.664), 
+        100px 130px 70px rgba(255, 0, 0, 0.582), 
+        150px 0 70px rgba(255, 255, 0, 0.623), 
+        200px 0, 
+        300px -130px 70px rgba(3, 40, 109, 0.664), 
+        300px 130px 70px rgba(255, 0, 0, 0.582), 
+        350px 0 70px rgba(255, 255, 0, 0.623), 
+        -100px 130px 70px rgba(3, 40, 109, 0.664), 
+        -100px -130px 70px rgba(255, 0, 0, 0.582), 
+        -150px 0 70px rgba(255, 255, 0, 0.623);
+}

@@ -1,0 +1,44 @@
+/*la especificidad es la forma en la que aplicamos stylos de forma explicita a un elemento por medio de la clase, atributo o id, los mas especificos son los de id, ya que los id son unicos*/
+#title2{
+    color: darkgoldenrod;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    font-stretch: expanded;
+}
+
+/*si declaramos dos estilos con especificidad de igual valor para un mismo elemento, este aplicara lacascada y aplicara el ultimo declarado*/
+#title2{
+    color: darkolivegreen;
+    font-family: monospace;
+    font-size: 45px;
+}
+
+.title{
+    color: red;
+    font-family: monospace;
+}
+
+/*la cascada es la forma en la que se aplican los estilos a un elemento de manera secuencial, por lo tanto se aplica siempre la ultima que se declare, sobreescribiendo el anterior estilo declarado y dejando los demas que no se hayan modificado*/
+h2{
+    color: blue;
+    font-size: 20px;
+}
+
+/*este estilo rompe con la especificidad de Id, gracias que por medio de la palabra !important indicamos que es importante mantener dicho stylo, aunque es mala practica usarlo*/
+h2{
+    color: purple !important; 
+    font-size: large;
+}
+
+/*la herencia aplicar ciertos estilos a las etiquetas hijas del padre, aunque no todos los estilos se heredan, aqui tener cuidado*/
+section{
+    border: 3px solid slateblue;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(207, 40, 40);
+}
+
+/*como vemos podemos decirle a CSS que herede algun stylo con la palabra {inherit}, en el ejemplo estamos sobreescribiendo el color black por el heredado de la clase padre*/
+.header_title{
+    color: black; 
+    color: inherit;
+}

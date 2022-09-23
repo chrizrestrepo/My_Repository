@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEM</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!--
+        el estandar de definicion de class BEM, este nos dice que todo lo que este dentro de una etiqueta {X} hace parte de un bloque, las clases u etiquetas dentro del bloque (elementos) se definiran con el nombre del bloque o etiqueta que las englobe, seguido de dos guines bajos, ejemplo: class="nav__logo".
+
+        los elementos modificadores se definen en inicio igual a cualquier elemento, con la diferencia de que estos al ser diferentes se les define con dos guiones medios adicionales y la caracteristica que lo hace diferente de los demas, estos elementos se definen asi para difrerenciarlos de los demas, ejemplo: class="nav_link nav__link--active"
+
+        esta metodologia se usa con el fin de que podamos ir heredando estilos de los demas elementos, por ejemplo si damos estilo a nav, se aplica a todos los que contengan la palabra nav, si elegimos nav__link o nav__logo se aplicara el estilo a los que posean estas pablabras en la clase, si damos estilo a nav__link--active, solo modificariamos este heredando el asi los estilos de nav y nav_link, adicionando los demas.
+    -->
+    <nav class="nav">
+        <img src="mar_y_rocas_mobile.jpg" alt="nav__logo">
+
+        <div class="nav__links">
+            <a href="#" class="nav__link">Inicio</a>
+            <a href="#" class="nav__link">Acerca de</a>
+            <a href="#" class="nav__link nav__link--active">Contacto</a>
+        </div>
+    </nav>
+    
+</body>
+</html>

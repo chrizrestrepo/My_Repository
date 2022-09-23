@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--
+    picture -> se usa para mostrar imagenes en el navegador, esta viene siempre acompanada de la etiqueta <source> y la etiqueta <img>. esta ultima se usa para establecer una especie de backup p respaldo en caso de que no se encuentre la imagen establecida dentro de la etiqueta <source>
+    source -> esta etiqueta se usa similar a la etiqueta <img>, ya que se hace uso de los atributos src y srcset, ademas esta tambien tiene el atributo media que indica a partir de que tamano en pixeles se debe mostrar la imagen 
+-->
+
+<body>
+    <main>
+        <h1>etiqueta picture</h1>
+        <!--en el ejemplo el media establece que la imagen principal de srcset se muestre a partir de un tamano mayor de 1200px, si esta condicion no se cumple pues se mostrara la otra imagen estblecida en el srcset-->
+        <picture>
+            <source srcset="/contenido-embebido/assets/imagenes/mar_y_rocas.jpg,
+            /contenido-embebido/assets/imagenes/mar_y_rocas_mobile.jpg
+            " media="(max-width:1200px)">
+            <img src="/contenido-embebido/assets/imagenes/mar_y_rocas.jpg" alt="imagen rocas y mar">
+        </picture>
+    </main>
+</body>
+</html>
