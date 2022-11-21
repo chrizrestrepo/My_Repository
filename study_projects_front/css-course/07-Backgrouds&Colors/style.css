@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial;
+}
+
+.container{
+    padding: 70px;
+}
+
+.title{
+    font-size: 72px;
+    /*se pueden seleccionar colores a partir de nombres clave*/
+    color: saddlebrown;
+    /*tambien a partir de 3 colores primarios (RGB) red, green, blue y el maximo de cada color es 255*/
+    color: rgb(255, 100, 138);
+    /*si al RGB se le declara un cuerto valor este equivale a la transparencia y su valor por defecto es 1, osea que no tiene transparencia... por lo que se aplica de manera descendente*/
+    color: rgb(255, 100, 138, .24);
+    /*tambien se puede aplicar colores a partir de exadecimales, y estos van desde 0-f y se dividen en 3, los dos primeros valores representan el valor de red, los dos siguiente green y los ultimos blue. siempre inician con #*/
+    color: #0ff078;  
+    /*se puede aplicar color a traves del circulo cromatico, a partir de hsl. el primer campo representa el grado en el que se ubica el color en el circulo cromatico y va desde 0-360, el segundo valor es la saturacion(%) y el tercero la luminocidad(%). se puede buscar el circulo cromatico en internet para saber en que grado se ubica cada color*/
+    color: hsl(341, 80%, 50%);
+}
+
+.container_2{
+    display: inline-block;
+    width: 300px;
+    height: 500px;
+    background-color: #0ff078;
+    /*permite agregar una imagen de fondo*/
+    background-image: url('assets/images/purple-image.jpg');
+    /*
+    permite darle un tamano a la imagen de fondo, se usan palabras reservadas o valores, 
+    contain= ajusta la imagen al tamano del contenido 
+    cover=cubre el total del contenido pero se desborda
+    */  
+    background-size: contain;
+
+    /*mueve la imagen de fondo hacia donde se desee, recibe cuatro parametros (top, left, right, bottom, center)*/
+    background-position: right center;
+    
+    /*declara el tamano de la imagen de fondo*/
+    background-size: 200px;
+    /*permite indicar si la imagen de fondo se repite, sus valores son:
+    repeat
+    no-repeat
+    repeat-x = horizontalmente
+    repeat-y = verticalmente 
+    */
+    background-repeat: no-repeat;  
+}mente 
+
+.container_3{
+    width: 400px;
+    height: 600px;
+    /*se pueden usar imagenes de fondo con gradientes o lo que es lo mismo degradado de color sobre la imagen de fondo, se declara con la propiedad linear-gradient que recibe dos colores y adicional la rul de la imagen separada por coma*/
+    background-image: linear-gradient(rgba(180, 1, 1, 0.726), rgba(230, 160, 10, 0.479)), url('assets/images/vans_sk8.jpg');
+    background-size: cover;
+    border-radius: 20px;
+    border-color: rgba(0, 0, 0, 0.377);
+    border-style: solid;
+    margin: 10px;
+}

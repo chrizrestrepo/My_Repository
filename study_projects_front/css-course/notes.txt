@@ -1,2 +1,9 @@
 RECURSOS
 imagenes gratuitas --> unplash.com
+colores --> colors.co
+iconos svg --> boxicons.com
+gradientes --> webgradients.com
+fuentes --> fonts.google.com
+Banco de iustraciones --> undraw.co
+obtener waves o ondas --> getwaves.io
+obtener svg de logos -> svgporn.com
