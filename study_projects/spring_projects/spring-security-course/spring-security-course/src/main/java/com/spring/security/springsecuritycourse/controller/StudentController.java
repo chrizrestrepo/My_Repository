@@ -34,11 +34,4 @@ public class StudentController {
                 .findFirst()
                 .orElseThrow(() -> new NoSuchElementException("the Student with id: ".concat(studentName).concat(" Not found")));
     }
-
-    @PostMapping(path = "/create")
-    public Student saveStudent(@RequestParam(name = "id") String id, @RequestParam(name = "name") String name){
-        Student student = new Student(id, name);
-//        STUDENT_LIST.add(student);
-        return student;
-    }
 }
